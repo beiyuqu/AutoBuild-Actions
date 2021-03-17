@@ -5,7 +5,7 @@
 
 Diy_Core() {
 	Author=Hyy2001
-	Default_Device=
+	Default_Device=d-team_newifi-d2
 
 	INCLUDE_AutoUpdate=true
 	INCLUDE_AutoBuild_Tools=true
@@ -43,6 +43,8 @@ Diy-Part1() {
 	ExtraPackages svn lean luci-app-eqos https://github.com/immortalwrt/immortalwrt/trunk/package/ntlf9t
 	ExtraPackages git other luci-app-bearDropper https://github.com/NateLol
 	ExtraPackages git other luci-app-onliner https://github.com/rufengsuixing
+	sed -i 's/192.168.1.1/192.168.100.1/g' package/base-files/files/bin/config_generate
+	sed -i 's/^root.*/root:$1$tPYTHhT8$XRiZ79P8LHjTJvevrFt.F1:18473:0:99999:7:::/g' package/base-files/files/etc/shadow
 }
 
 Diy-Part2() {
